@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AMart - Toko online modern dengan produk favorit, promo harian, dan kemudahan belanja digital."
+    />
+    <title>AMart | Belanja Lebih Cerdas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span>Gratis Ongkir ke seluruh Indonesia</span>
+        <span>Promo Hari Ini: Diskon hingga 70%</span>
+      </div>
+    </div>
+
+    <header class="header sticky">
+      <div class="container header-inner">
+        <div class="brand-wrap">
+          <div class="brand-mark">A</div>
+          <div class="brand-text">
+            <span class="brand-name">AMart</span>
+            <small>Market & Lifestyle</small>
+          </div>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="text" placeholder="Cari produk, brand, atau kebutuhanmu" />
+        </div>
+
+        <div class="header-actions">
+          <button class="ghost-btn" type="button">Masuk</button>
+          <button class="primary-btn" type="button">Daftar</button>
+          <button id="cartButton" class="cart-btn" type="button" aria-label="Keranjang belanja">
+            🛒
+            <span id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <div class="nav-links">
+          <a href="#">Semua Kategori</a>
+          <a href="#promo">Promo</a>
+          <a href="#flashsale">Flash Sale</a>
+          <a href="#best-seller">Best Seller</a>
+          <a href="#support">Bantuan</a>
+        </div>
+        <div class="nav-meta">
+          <span>📍 Jakarta Pusat</span>
+          <span>🚚 Paket cepat</span>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-left">
+          <div class="badge">Belanja aman & cepat</div>
+          <h1>Belanja kebutuhan harian lebih hemat dan praktis.</h1>
+          <p>
+            Nikmati produk unggulan, promo spesial, dan pengalaman belanja yang lebih
+            menyenangkan hanya di AMart.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn large" type="button">Belanja Sekarang</button>
+            <button class="secondary-btn large" type="button">Lihat Promo</button>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>50K+</strong>
+              <span>Produk</span>
+            </div>
+            <div>
+              <strong>4.9/5</strong>
+              <span>Rating</span>
+            </div>
+            <div>
+              <strong>24 jam</strong>
+              <span>Fast Delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="promo-card">
+            <div class="promo-pill">Flash Sale 12.12</div>
+            <h3>Diskon sampai 70%</h3>
+            <div class="mini-product">
+              <div class="mini-image one"></div>
+              <div>
+                <span>Smart Watch Pro</span>
+                <strong>Rp 899.000</strong>
+              </div>
+            </div>
+            <div class="mini-product">
+              <div class="mini-image two"></div>
+              <div>
+                <span>Headphone Air</span>
+                <strong>Rp 599.000</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container categories-section">
+        <div class="section-heading">
+          <h2>Kategori Populer</h2>
+          <a href="#">Lihat Semua</a>
+        </div>
+        <div class="categories-grid">
+          <button class="category-card active" data-category="all" type="button">
+            <span>🛍️</span>
+            <strong>Semua</strong>
+          </button>
+          <button class="category-card" data-category="electronics" type="button">
+            <span>📱</span>
+            <strong>Elektronik</strong>
+          </button>
+          <button class="category-card" data-category="fashion" type="button">
+            <span>👕</span>
+            <strong>Fashion</strong>
+          </button>
+          <button class="category-card" data-category="home" type="button">
+            <span>🏡</span>
+            <strong>Rumah</strong>
+          </button>
+          <button class="category-card" data-category="beauty" type="button">
+            <span>💄</span>
+            <strong>Beauty</strong>
+          </button>
+          <button class="category-card" data-category="groceries" type="button">
+            <span>🛒</span>
+            <strong>Groceries</strong>
+          </button>
+        </div>
+      </section>
+
+      <section id="promo" class="container promo-banner">
+        <div class="promo-banner-inner">
+          <div>
+            <span class="promo-label">Promo Terbaru</span>
+            <h3>Weekend Sale: Diskon spesial untuk produk rumah tangga</h3>
+          </div>
+          <button class="primary-btn" type="button">Cek Promo</button>
+        </div>
+      </section>
+
+      <section id="best-seller" class="container product-section">
+        <div class="section-heading">
+          <h2>Best Seller</h2>
+          <a href="#">Lihat Semua</a>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <section id="flashsale" class="container flash-deals">
+        <div class="section-heading">
+          <h2>Flash Sale</h2>
+          <div class="countdown">Berakhir dalam: 02:15:30</div>
+        </div>
+
+        <div class="flash-grid">
+          <article class="deal-card">
+            <span class="deal-tag">-40%</span>
+            <div class="deal-image one"></div>
+            <h3>Earbuds Max</h3>
+            <div class="deal-price-row">
+              <strong>Rp 499.000</strong>
+              <span>Rp 799.000</span>
+            </div>
+          </article>
+
+          <article class="deal-card">
+            <span class="deal-tag">-30%</span>
+            <div class="deal-image two"></div>
+            <h3>Kursi Ergonomis</h3>
+            <div class="deal-price-row">
+              <strong>Rp 899.000</strong>
+              <span>Rp 1.299.000</span>
+            </div>
+          </article>
+
+          <article class="deal-card">
+            <span class="deal-tag">-50%</span>
+            <div class="deal-image three"></div>
+            <h3>Set Makeup</h3>
+            <div class="deal-price-row">
+              <strong>Rp 299.000</strong>
+              <span>Rp 599.000</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="support" class="container benefits">
+        <div class="benefit-box">
+          <span>🚚</span>
+          <div>
+            <h4>Pengiriman Cepat</h4>
+            <p>Gratis ongkir & paket cepat</p>
+          </div>
+        </div>
+        <div class="benefit-box">
+          <span>🛡️</span>
+          <div>
+            <h4>100% Aman</h4>
+            <p>Transaksi aman & jaminan produk</p>
+          </div>
+        </div>
+        <div class="benefit-box">
+          <span>💬</span>
+          <div>
+            <h4>CS 24/7</h4>
+            <p>Siap membantu kapan pun</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand-wrap footer-brand">
+            <div class="brand-mark">A</div>
+            <div class="brand-text">
+              <span class="brand-name">AMart</span>
+              <small>Market & Lifestyle</small>
+            </div>
+          </div>
+          <p>
+            Platform belanja digital yang menghadirkan kebutuhan sehari-hari dengan produk
+            berkualitas dan harga terjangkau.
+          </p>
+        </div>
+
+        <div>
+          <h4>Tentang AMart</h4>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Karier</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Bantuan</h4>
+          <ul>
+            <li><a href="#">Pusat Bantuan</a></li>
+            <li><a href="#">Cara Belanja</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Newsletter</h4>
+          <div class="newsletter-box">
+            <input type="email" placeholder="Email Anda" />
+            <button type="button">Daftar</button>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 AMart. Semua hak dilindungi.</span>
+        <span>Privacy Policy · Terms of Service</span>
+      </div>
+    </footer>
+
+    <aside id="cartDrawer" class="cart-drawer" aria-label="Keranjang belanja">
+      <div class="drawer-header">
+        <h3>Keranjang Belanja</h3>
+        <button id="closeCart" type="button" aria-label="Tutup keranjang">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="subtotal">Rp 0</strong>
+        </div>
+        <div class="summary-row">
+          <span>Ongkir</span>
+          <strong>Rp 0</strong>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <strong id="totalPrice">Rp 0</strong>
+        </div>
+        <button class="primary-btn full" type="button">Checkout</button>
+      </div>
+    </aside>
+
+    <div id="overlay" class="overlay"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
